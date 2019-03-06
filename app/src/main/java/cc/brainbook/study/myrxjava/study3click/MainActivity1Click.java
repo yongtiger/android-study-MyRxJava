@@ -24,9 +24,9 @@ public class MainActivity1Click extends AppCompatActivity {
         Button btnClick = findViewById(R.id.btnClick);
 
 
-        /* ------------ 点击: share() ------------ */
+        /* ------------ 点击 ------------ */
 //        Disposable disposableClicks = RxView.clicks(btnClick)
-////                .share()  ///???
+////                .share()   ///share 操作符: 用来保证点击事件的 Observable 被转为 Hot Observable (https://juejin.im/post/5b8f5ea8f265da0a9223887e)
 //                .subscribe(click -> Log.d(TAG, "RxView.clicks(btnClick): 点击"));
 
 

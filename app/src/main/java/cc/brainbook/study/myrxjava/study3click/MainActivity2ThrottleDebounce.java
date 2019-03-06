@@ -33,6 +33,7 @@ public class MainActivity2ThrottleDebounce extends AppCompatActivity {
 //        ///https://juejin.im/post/5b8f5ea8f265da0a9223887e
 //        ///debounce()操作符: 产生一个新的 Observable, 这个 Observable 只发射原 Observable 中时间间隔小于指定阈值的最大子序列的最后一个元素。
 //        ///只有在空闲了一段时间后才发射数据，通俗的说，就是如果一段时间没有操作，就执行一次操作
+//        ///debounce操作符是用来防重复数据的或者(防抖动)
 //        Disposable disposableClicks = RxView.clicks(btnClick)
 //                .debounce(500, TimeUnit.MILLISECONDS)
 //                .subscribe(o -> {
@@ -44,7 +45,7 @@ public class MainActivity2ThrottleDebounce extends AppCompatActivity {
 //        ///注意：不防抖！
 //        Observable<Long> clicks = RxView.clicks(btnClick)
 //                .map(o -> System.currentTimeMillis())
-//                .share();
+//                .share(); ///share 操作符: 用来保证点击事件的 Observable 被转为 Hot Observable (https://juejin.im/post/5b8f5ea8f265da0a9223887e)
 //        Disposable disposableClicks = clicks.zipWith(clicks.skip(1), new BiFunction<Long, Long, Long>() {
 //            @Override
 //            public Long apply(Long t1, Long t2) throws Exception {
@@ -67,9 +68,10 @@ public class MainActivity2ThrottleDebounce extends AppCompatActivity {
 
 
 //        /* ------------ 实现双击防抖（只接受一定时间内（比如2秒）、且前后两次点击时间差小于指定时间（如500ms）的点击）------------ */
+//        ///https://juejin.im/post/5b8f5ea8f265da0a9223887e
 //        Observable<Long> clicks = RxView.clicks(btnClick)
 //                .map(o -> System.currentTimeMillis())
-//                .share();
+//                .share(); ///share 操作符: 用来保证点击事件的 Observable 被转为 Hot Observable (https://juejin.im/post/5b8f5ea8f265da0a9223887e)
 //        Disposable disposableClicks = clicks.zipWith(clicks.skip(1), new BiFunction<Long, Long, Long>() {
 //            @Override
 //            public Long apply(Long t1, Long t2) throws Exception {
@@ -95,7 +97,8 @@ public class MainActivity2ThrottleDebounce extends AppCompatActivity {
 //        ///https://blog.csdn.net/qq275949034qq/article/details/51597990
 //        ///debounce()操作符: 产生一个新的 Observable, 这个 Observable 只发射原 Observable 中时间间隔小于指定阈值的最大子序列的最后一个元素。
 //        ///只有在空闲了一段时间后才发射数据，通俗的说，就是如果一段时间没有操作，就执行一次操作
-//        Observable<Unit> observable = RxView.clicks(btnClick).share();
+//        ///debounce操作符是用来防重复数据的或者(防抖动)
+//        Observable<Unit> observable = RxView.clicks(btnClick).share(); ///share 操作符: 用来保证点击事件的 Observable 被转为 Hot Observable (https://juejin.im/post/5b8f5ea8f265da0a9223887e)
 //        Disposable disposableClicks = observable.buffer(observable.debounce(500, TimeUnit.MILLISECONDS))
 //                .filter(new Predicate<List<Unit>>() {
 //                    @Override
