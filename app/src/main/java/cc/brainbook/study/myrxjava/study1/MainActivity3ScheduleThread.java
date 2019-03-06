@@ -1,4 +1,4 @@
-package cc.brainbook.study.myrxjava.study2;
+package cc.brainbook.study.myrxjava.study1;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,8 +14,9 @@ import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 
-public class MainActivity1ScheduleThread extends AppCompatActivity {
+public class MainActivity3ScheduleThread extends AppCompatActivity {
     private static final String TAG = "TAG";
 
     @Override
@@ -44,6 +45,8 @@ public class MainActivity1ScheduleThread extends AppCompatActivity {
             }
         })
 
+
+///https://blog.csdn.net/xsl_bj/article/details/51120232
 //        /* ---------- 指定上游发送事件的线程（只第一次指定线程有效！指定线程的位置随意）---------- */
 //
 //        ///主线程，指定的操作将在Android 主线程运行
@@ -79,10 +82,16 @@ public class MainActivity1ScheduleThread extends AppCompatActivity {
 //        ///ExecutorService是Java的线程池的一个管理接口
 //        .observeOn(Schedulers.from(Executors.newCachedThreadPool()))
 //        .observeOn(Schedulers.from(Executors.newSingleThreadExecutor(new ThreadFactory() {
-//                    @Override
-//                    public Thread newThread(Runnable r) {
-//                        return new Thread(r, "new single thread executor");
-//                    }
+//                @Override
+//                public Thread newThread(Runnable r) {
+//                    return new Thread(r, "new single thread executor");
+//                }
+//        })))
+//        .observeOn(Schedulers.from(Executors.newFixedThreadPool(3, new ThreadFactory() {
+//                @Override
+//                public Thread newThread(Runnable r) {
+//                    return new Thread(r, "new fixed thread pool");
+//                }
 //        })))
 
         .subscribe(new Observer<Integer>() {

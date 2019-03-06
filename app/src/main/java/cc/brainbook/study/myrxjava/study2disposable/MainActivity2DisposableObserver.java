@@ -1,4 +1,4 @@
-package cc.brainbook.study.myrxjava.study2;
+package cc.brainbook.study.myrxjava.study2disposable;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,11 +6,6 @@ import android.util.Log;
 
 import cc.brainbook.study.myrxjava.R;
 import io.reactivex.Observable;
-import io.reactivex.ObservableEmitter;
-import io.reactivex.ObservableOnSubscribe;
-import io.reactivex.Observer;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
 import io.reactivex.observers.DisposableObserver;
 
 public class MainActivity2DisposableObserver extends AppCompatActivity {
@@ -25,6 +20,7 @@ public class MainActivity2DisposableObserver extends AppCompatActivity {
 
 
         /* ------ DisposableObserver allows asynchronous cancellation by implementing Disposable ------ */
+        ///https://juejin.im/post/5b0cdcac518825155e4d655f
 
 //        ///方法一：subscribe(disposableObserver)
 //        DisposableObserver disposableObserver = new DisposableObserver<Integer>() {

@@ -1,4 +1,4 @@
-package cc.brainbook.study.myrxjava.study2;
+package cc.brainbook.study.myrxjava.study2disposable;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,7 +13,7 @@ import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 
-public class MainActivity2Disposable extends AppCompatActivity {
+public class MainActivity1Disposable extends AppCompatActivity {
     private static final String TAG = "TAG";
 
     ///取消订阅
