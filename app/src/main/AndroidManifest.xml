@@ -54,16 +54,22 @@
             <!--</intent-filter>-->
         </activity>
         <activity android:name=".study3click.MainActivity2ThrottleDebounce">
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+        </activity>
+        <activity android:name=".study4retry.MainActivity1RetryWhen">
+             <!--<intent-filter>-->
+             <!--<action android:name="android.intent.action.MAIN" />-->
+             <!--<category android:name="android.intent.category.LAUNCHER" />-->
+             <!--</intent-filter>-->
+        </activity>
+        <activity android:name=".study4retry.MainActivity2RetryWhen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".MainActivityRetry">
-             <!--<intent-filter> -->
-             <!--<action android:name="android.intent.action.MAIN" /> -->
-             <!--<category android:name="android.intent.category.LAUNCHER" /> -->
-             <!--</intent-filter> -->
         </activity>
     </application>
 

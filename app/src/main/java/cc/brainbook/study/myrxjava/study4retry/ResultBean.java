@@ -1,6 +1,6 @@
-package cc.brainbook.study.myrxjava;
+package cc.brainbook.study.myrxjava.study4retry;
 
-public class Translation {
+public class ResultBean {
     private int status;
 
     private String content;
@@ -23,7 +23,7 @@ public class Translation {
 
     @Override
     public String toString() {
-        return "Translation{" +
+        return "ResultBean{" +
                 "status=" + status +
                 ", content='" + content + '\'' +
                 '}';
